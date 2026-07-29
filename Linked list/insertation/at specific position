@@ -1,0 +1,38 @@
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	    int pos=2;
+	    Node head=new Node(10);
+	    head.next=new Node(20);
+	    head.next.next=new Node(30);
+	    head.next.next.next=new Node(36);
+	    Node newNode =new Node(77);
+
+	   Node temp=head;
+	   for (int i=0;i<pos-1;i++){
+	       temp=temp.next;
+	   }
+	   newNode.next=temp.next;
+	   temp.next=newNode;
+	   
+	 
+	    temp=head;
+	    while (temp!=null){
+	        System.out.println(temp.data);
+	        temp=temp.next;
+	    }
+	    
+		
+	}
+}
+class Node{
+    int data;
+    Node next;
+    
+    Node (int data){
+        this.data=data;
+        this.next=null;
+    }
+}
